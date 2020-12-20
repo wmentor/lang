@@ -16,4 +16,6 @@ func TestLang(t *testing.T) {
 	tD("123 12341234 5243245 324534", UnknownLang)
 	tD("Hello, World!", "en")
 	tD("What do you about that?", "en")
+	tD("Привет, мир!", "ru")
+	tD("Частостный словарь русского языка", "ru")
 }
