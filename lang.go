@@ -3,10 +3,16 @@ package lang
 import (
 	"bufio"
 	"fmt"
+	"io"
 	"strings"
 
 	"github.com/wmentor/embed"
 	_ "github.com/wmentor/lang/data"
+	"github.com/wmentor/tokens"
+)
+
+const (
+	UnknownLang string = "??"
 )
 
 var (
@@ -56,4 +62,43 @@ func loadLang(name string) {
 			}
 		}
 	}
+}
+
+func Detect(in io.Reader) string {
+
+	lns := map[string]int{}
+
+	tokens.Process(in, func(t string) {
+		if v, has := data[t]; has {
+			for _, l := range strings.Fields(v) {
+				lns[l]++
+			}
+		}
+	})
+
+	if len(lns) == 0 {
+		return UnknownLang
+	}
+
+	max := 0
+
+	for _, cnt := range lns {
+		if max < cnt {
+			max = cnt
+		}
+	}
+
+	var res string
+	var threshold int = max / 2
+
+	for l, cnt := range lns {
+		if cnt >= threshold {
+			if res != "" {
+				return UnknownLang
+			}
+			res = l
+		}
+	}
+
+	return res
 }

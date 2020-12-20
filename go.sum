@@ -1,2 +1,4 @@
 github.com/wmentor/embed v1.0.2 h1:THH+KBMM0dIES7VTjj3NEzH2bB77yQIXjnGBvkk6CBc=
 github.com/wmentor/embed v1.0.2/go.mod h1:ljY2uBea1vl71O6wWkcEVUG+mSziG1QCoVewV9PMcYs=
+github.com/wmentor/tokens v1.0.0 h1:OkPv+dvE+r2gOeJdTJExDvocavstfmp8X6fO43XKdAo=
+github.com/wmentor/tokens v1.0.0/go.mod h1:2Vw6+Br138zGpi+jnt5UUatsGckZPQBYQ4F/WqG7taA=
