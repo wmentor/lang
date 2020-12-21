@@ -7,8 +7,10 @@ import (
 	"strings"
 
 	"github.com/wmentor/embed"
+	"github.com/wmentor/mcounter"
+	ngram "github.com/wmentor/qgram"
+
 	_ "github.com/wmentor/lang/data"
-	"github.com/wmentor/tokens"
 )
 
 const (
@@ -22,7 +24,7 @@ var (
 
 func init() {
 
-	Langs = []string{"en", "ru"}
+	Langs = []string{"de", "el", "en", "es", "fr", "it", "ka", "ru"}
 	data = map[string]string{}
 
 	for _, name := range Langs {
@@ -66,39 +68,32 @@ func loadLang(name string) {
 
 func Detect(in io.Reader) string {
 
-	lns := map[string]int{}
+	lns := mcounter.New()
 
-	tokens.Process(in, func(t string) {
-		if v, has := data[t]; has {
-			for _, l := range strings.Fields(v) {
-				lns[l]++
-			}
+	hash := ngram.CalcMap(in)
+
+	for k, v := range hash {
+		for _, l := range strings.Fields(data[k]) {
+			lns.Inc(l, uint64(v))
 		}
-	})
+	}
 
 	if len(lns) == 0 {
 		return UnknownLang
 	}
 
-	max := 0
-
-	for _, cnt := range lns {
-		if max < cnt {
-			max = cnt
-		}
+	list := lns.Slice(1, true)
+	if len(list) == 0 {
+		return UnknownLang
 	}
 
-	var res string
-	var threshold int = max / 2
+	return list[0]
+}
 
-	for l, cnt := range lns {
-		if cnt >= threshold {
-			if res != "" {
-				return UnknownLang
-			}
-			res = l
+func Conflicts() {
+	for w, ls := range data {
+		if list := strings.Fields(ls); len(list) > 1 {
+			fmt.Printf("%s %s\n", w, ls)
 		}
 	}
-
-	return res
 }
