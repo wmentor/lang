@@ -1,7 +1,7 @@
 # lang
 
 ![test](https://github.com/wmentor/lang/workflows/test/badge.svg)
-[![Coverage Status](https://coveralls.io/repos/github/wmentor/lang/badge.svg?branch=master&v=1.0.1)](https://coveralls.io/github/wmentor/lang?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/wmentor/lang/badge.svg?branch=master)](https://coveralls.io/github/wmentor/lang?branch=master)
 [![https://goreportcard.com/report/github.com/wmentor/lang](https://goreportcard.com/badge/github.com/wmentor/lang)](https://goreportcard.com/report/github.com/wmentor/lang)
 [![https://pkg.go.dev/github.com/wmentor/lang](https://pkg.go.dev/badge/github.com/wmentor/lang.svg)](https://pkg.go.dev/github.com/wmentor/lang)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
