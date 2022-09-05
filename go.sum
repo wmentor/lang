@@ -1,10 +1,8 @@
-github.com/wmentor/embed v1.0.2 h1:THH+KBMM0dIES7VTjj3NEzH2bB77yQIXjnGBvkk6CBc=
-github.com/wmentor/embed v1.0.2/go.mod h1:ljY2uBea1vl71O6wWkcEVUG+mSziG1QCoVewV9PMcYs=
 github.com/wmentor/mcounter v1.0.0 h1:VHkMlP+I0d3kK6ewafwc9a1FdZw8EBGzHneg7wZdZUo=
 github.com/wmentor/mcounter v1.0.0/go.mod h1:WcX8povgx6CW3kJeH9e3eWyGntrmo82hYAQtlKQcYos=
-github.com/wmentor/qgram v1.0.0 h1:CLVx6AxTX9oOTHASBvipw/fgjuSgVKM7WGiFaBVP52E=
-github.com/wmentor/qgram v1.0.0/go.mod h1:7ucYc7Oc/ueWN9rVkYLxB6kC9B/9Sap+OeX2978awz4=
-github.com/wmentor/qgram v1.0.1 h1:cqAJWscq25wloklh8mAYEPZ70VBkhA9b7h6ZRUUQ0cE=
-github.com/wmentor/qgram v1.0.1/go.mod h1:7ucYc7Oc/ueWN9rVkYLxB6kC9B/9Sap+OeX2978awz4=
-github.com/wmentor/tokens v1.0.0 h1:OkPv+dvE+r2gOeJdTJExDvocavstfmp8X6fO43XKdAo=
-github.com/wmentor/tokens v1.0.0/go.mod h1:2Vw6+Br138zGpi+jnt5UUatsGckZPQBYQ4F/WqG7taA=
+github.com/wmentor/qgram v1.0.2 h1:LrJ6fSmINcyTKyZvnYdIb08sV9u3OwekoJGj01EbHRI=
+github.com/wmentor/qgram v1.0.2/go.mod h1:9m5VBZtD4dtEtM6c3UVD/OL00C9PhdgKnH2utZzkscI=
+github.com/wmentor/tbuf v1.0.0 h1:KHfiIdOTWor7a/5dSoLovxgGuipLAAU1X4+U3jzdIZ4=
+github.com/wmentor/tbuf v1.0.0/go.mod h1:YvYY3BMph/UVPSIMbQoraxgr7+7DCAvYSSJHZk2gsBQ=
+github.com/wmentor/tokens v1.0.5 h1:M6c3lcunuzM8zKaJen07zp3v2mw7I6qgiWkVuw95ntU=
+github.com/wmentor/tokens v1.0.5/go.mod h1:6iacaTHgxf5CaRPWTHGMfHG9ysvj9kVFu9OvHkJLjtc=

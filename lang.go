@@ -6,11 +6,8 @@ import (
 	"io"
 	"strings"
 
-	"github.com/wmentor/embed"
 	"github.com/wmentor/mcounter"
 	ngram "github.com/wmentor/qgram"
-
-	_ "github.com/wmentor/lang/data"
 )
 
 const (
@@ -23,7 +20,6 @@ var (
 )
 
 func init() {
-
 	Langs = []string{"de", "el", "en", "es", "fr", "it", "ka", "ru"}
 	data = map[string]string{}
 
@@ -33,10 +29,11 @@ func init() {
 }
 
 func loadLang(name string) {
-	in, err := embed.Get(fmt.Sprintf("github.com/wmentor/lang/data/%s.txt", name))
+	in, err := fs.Open(name + ".txt")
 	if err != nil {
-		return
+		panic("unknown data file: " + name)
 	}
+	defer in.Close()
 
 	br := bufio.NewReader(in)
 
@@ -67,7 +64,6 @@ func loadLang(name string) {
 }
 
 func Detect(in io.Reader) string {
-
 	lns := mcounter.New()
 
 	hash := ngram.CalcMap(in)

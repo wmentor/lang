@@ -10,7 +10,7 @@ Simple language detection library written on pure Go.
 
 ## Summary
 
-* Require Go version >= 1.12
+* Require Go version >= 1.18
 * Written on pure Go
 * Supported languages: German (de), Greek (el), English (en), Spanish (es), French (fr), Italian (it), Georgian (ka), Russian (ru)
 * MIT license
