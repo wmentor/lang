@@ -11,7 +11,7 @@ Simple language detection library written on pure Go.
 
 * Require Go version >= 1.18
 * Written on pure Go
-* Supported languages: German (de), Greek (el), English (en), Spanish (es), French (fr), Italian (it), Georgian (ka), Russian (ru)
+* Supported languages: Armenian (am), German (de), Greek (el), English (en), Spanish (es), French (fr), Italian (it), Georgian (ka), Russian (ru)
 * MIT license
 
 ## Install
@@ -36,5 +36,6 @@ func main() {
   println(lang.Detect(strings.NewReader("Hello, world!")))     // en
   println(lang.Detect(strings.NewReader("Привет, мир!")))      // ru
   println(lang.Detect(strings.NewReader("Hallo Welt!")))       // de
+  println(lang.Detect(strings.NewReader("Բարեւ աշխարհ!")))     // am
 }
 ```

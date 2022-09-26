@@ -20,7 +20,7 @@ var (
 )
 
 func init() {
-	Langs = []string{"de", "el", "en", "es", "fr", "it", "ka", "ru"}
+	Langs = []string{"am", "de", "el", "en", "es", "fr", "it", "ka", "ru"}
 	data = map[string]string{}
 
 	for _, name := range Langs {

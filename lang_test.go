@@ -27,4 +27,5 @@ func TestLang(t *testing.T) {
 	tD("Never gonna give you up", "en")
 	tD("გამარჯობა ჩემო ახალგაზრდა მეგობარო!", "ka")
 	tD("Γεια σας, ο μικρός μου φίλος!", "el")
+	tD("Բարեւ աշխարհ!", "am")
 }
