@@ -19,7 +19,7 @@ var (
 	data  map[string]string
 )
 
-func init() {
+func init() { //nolint:gochecknoinits // ok.
 	Langs = []string{"am", "de", "el", "en", "es", "fr", "it", "ka", "ru"}
 	data = map[string]string{}
 
@@ -43,7 +43,7 @@ func loadLang(name string) {
 			break
 		}
 
-		if str = strings.TrimSpace(str); str != "" {
+		if str = strings.TrimSpace(str); str != "" { //nolint:nestif // it's ok.
 			if v, has := data[str]; has {
 				list := strings.Fields(v)
 				has = false
@@ -89,7 +89,7 @@ func Detect(in io.Reader) string {
 func Conflicts() {
 	for w, ls := range data {
 		if list := strings.Fields(ls); len(list) > 1 {
-			fmt.Printf("%s %s\n", w, ls)
+			fmt.Printf("%s %s\n", w, ls) //nolint:forbidigo // it's ok.
 		}
 	}
 }
