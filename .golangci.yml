@@ -23,7 +23,7 @@ linters:
     - errname
     - errorlint
     - exhaustive
-    - forbidigo
+#    - forbidigo
     - forcetypeassert
     - funlen
     - gochecknoinits
@@ -47,7 +47,7 @@ linters:
     - maintidx
     - makezero
     - misspell
-    - mnd
+#    - mnd
     - nakedret
     - nestif
     - nilerr

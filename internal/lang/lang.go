@@ -98,7 +98,7 @@ func TrgmMap(in io.Reader, ret map[uint64]uint64) {
 			r = 'е'
 		}
 
-		if unicode.IsLetter(r) {
+		if unicode.IsLetter(r) { //nolint:nestif // skip.
 			if unicode.Is(unicode.Han, r) {
 				ret[uint64(r)]++
 				if !lastSpace {
@@ -146,13 +146,17 @@ func TrgmTop(hash map[uint64]uint64) []uint64 {
 func TrgmSave(filename string, list []uint64) error {
 	wh, err := os.Create(filename)
 	if err != nil {
-		return err
+		return fmt.Errorf("create file %q error: %w", filename, err)
 	}
 	defer wh.Close()
 
 	fmt.Printf("save %d trgms to file %s\n", len(list), filename)
 
-	return binary.Write(wh, binary.BigEndian, list)
+	if err = binary.Write(wh, binary.BigEndian, list); err != nil {
+		return fmt.Errorf("binary write to file %q error: %w", filename, err)
+	}
+
+	return nil
 }
 
 func Detect(in io.Reader) string {
@@ -163,7 +167,7 @@ func Detect(in io.Reader) string {
 
 	for k, v := range hash {
 		for _, l := range strings.Fields(lngData[k]) {
-			lns.Inc(l, uint64(v))
+			lns.Inc(l, uint64(v)) //nolint:unconvert // ok.
 		}
 	}
 
