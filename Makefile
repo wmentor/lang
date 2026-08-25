@@ -1,4 +1,4 @@
-.PHONY: all lint test
+.PHONY: all generate lint test
 
 all: test lint
 
@@ -9,3 +9,6 @@ test:
 	@echo "run tests..."
 	@go clean -testcache
 	@go test ./... -cover -race
+
+generate:
+	go run ./internal/lang/dataset/generate.go -source ./internal/lang/dataset -dest ./internal/lang
