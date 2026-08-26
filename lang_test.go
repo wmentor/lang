@@ -1,19 +1,22 @@
-package lang
+package lang_test
 
 import (
 	"strings"
 	"testing"
+
+	"github.com/wmentor/lang"
 )
 
 func TestLang(t *testing.T) {
+	detector := lang.NewDetector()
 
 	tD := func(txt string, lang string) {
-		if res := Detect(strings.NewReader(txt)); res != lang {
+		if res := detector.Detect(strings.NewReader(txt)); res != lang {
 			t.Fatalf("Detect lang failed for: %s expect=%s res=%s", txt, lang, res)
 		}
 	}
 
-	tD("123 12341234 5243245 324534", UnknownLang)
+	tD("123 12341234 5243245 324534", lang.UnknownLang)
 	tD("Brave new World!", "en")
 	tD("What do you think about that?", "en")
 	tD("Привет, мир!", "ru")
@@ -27,5 +30,5 @@ func TestLang(t *testing.T) {
 	tD("Never gonna give you up", "en")
 	tD("გამარჯობა ჩემო ახალგაზრდა მეგობარო!", "ka")
 	tD("Γεια σας, ο μικρός μου φίλος!", "el")
-	tD("Բարեւ աշխարհ!", "am")
+	tD("Բարեւ աշխարհ!", "hy")
 }
